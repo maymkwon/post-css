@@ -20,6 +20,7 @@ a{
     color:var(--mainColor);
     p{
         font-size:var(--fontSize);
+        width: 20px;
     }
 }
 @import "bar.css" (min-width: 25em);
