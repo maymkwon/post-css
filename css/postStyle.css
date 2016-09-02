@@ -21,6 +21,7 @@ a{
     p{
         font-size:var(--fontSize);
         width: 20px;
+        height: 20px;
     }
 }
 @import "bar.css" (min-width: 25em);
