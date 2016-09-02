@@ -1,6 +1,4 @@
 div {
   lost-column: 1/3;
   font-size:var(--fontSize);
-  width: 500px;
-  height: 200px;
 }

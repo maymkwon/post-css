@@ -1,5 +1,6 @@
 // webpack.config.js
 var precss       = require('precss');
+var webpack       = require('webpack');
 var autoprefixer = require('autoprefixer');
 var lost = require('lost');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -15,9 +16,14 @@ module.exports = {
     filename: 'bundle.js'
   },
   watch:true,
+  resolve: {
+        modulesDirectories: ["node_modules", "bower_components"]
+    },
   plugins: [
-      new ExtractTextPlugin("styles.css")
-    //   new BowerWebpackPlugin()
+      new ExtractTextPlugin("styles.css"),
+      new webpack.ResolverPlugin(
+           new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])
+       )
   ],
   module: {
         loaders: [
