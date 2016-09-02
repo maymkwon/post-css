@@ -1,0 +1,27 @@
+{
+  "name": "post-css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "lost": "^7.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.4.0",
+    "css-loader": "^0.24.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "postcss-cssnext": "^2.7.0",
+    "postcss-import": "^8.1.2",
+    "postcss-loader": "^0.11.1",
+    "postcss-url": "^5.1.2",
+    "precss": "^1.4.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
