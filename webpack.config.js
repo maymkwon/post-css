@@ -6,7 +6,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var postcssNext = require("postcss-cssnext");
 var postcssImport = require("postcss-import");
 var postcssUrl = require("postcss-url");
-
+var BowerWebpackPlugin = require("bower-webpack-plugin");
 
 module.exports = {
   entry: './entry.js',
@@ -17,6 +17,7 @@ module.exports = {
   watch:true,
   plugins: [
       new ExtractTextPlugin("styles.css")
+    //   new BowerWebpackPlugin()
   ],
   module: {
         loaders: [
