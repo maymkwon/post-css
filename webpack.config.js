@@ -1,6 +1,8 @@
 // webpack.config.js
 var precss       = require('precss');
+var path = require('path');
 var webpack       = require('webpack');
+var modernizr       = require('modernizr');
 var autoprefixer = require('autoprefixer');
 var lost = require('lost');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -17,13 +19,13 @@ module.exports = {
   },
   watch:true,
   resolve: {
-        modulesDirectories: ["node_modules", "bower_components"]
+        modulesDirectories: ["node_modules", "bower_components"],
+        alias: {
+          modernizr$: path.resolve(__dirname, "./.modernizrrc")
+        }
     },
   plugins: [
-      new ExtractTextPlugin("styles.css"),
-      new webpack.ResolverPlugin(
-           new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])
-       )
+      new ExtractTextPlugin("styles.css")
   ],
   module: {
         loaders: [
@@ -32,6 +34,10 @@ module.exports = {
                 loader: ExtractTextPlugin.extract(
                     "css!postcss-loader?sourceMap=inline"
                 )
+            },
+            {
+                test: /\.modernizrrc$/,
+                loader: "modernizr"
             },
         ]
     },
