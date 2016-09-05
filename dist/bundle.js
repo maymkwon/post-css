@@ -45,11 +45,8 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(1);
-<<<<<<< HEAD
-=======
 	__webpack_require__(3);
 	// require("modernizr");
->>>>>>> e992dc293adf8c9171f18dc6208c921bf7daf3f0
 
 
 /***/ },
