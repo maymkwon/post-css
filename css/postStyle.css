@@ -5,6 +5,7 @@
 div {
   lost-column: 1/3;
   font-size:var(--fontSize);
+  background-color: red;
 }
 header{
     font-size: 12px;

@@ -1,5 +1,6 @@
 // webpack.config.js
 var precss       = require('precss');
+var path       = require('path');
 var webpack       = require('webpack');
 var autoprefixer = require('autoprefixer');
 var lost = require('lost');
@@ -7,25 +8,24 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var postcssNext = require("postcss-cssnext");
 var postcssImport = require("postcss-import");
 var postcssUrl = require("postcss-url");
-var BowerWebpackPlugin = require("bower-webpack-plugin");
+
 
 module.exports = {
-  entry: './entry.js',
-  output: {
+entry: './entry.js',
+output: {
     path: __dirname + '/dist',
     filename: 'bundle.js'
-  },
-  watch:true,
-  resolve: {
-        modulesDirectories: ["node_modules", "bower_components"]
-    },
-  plugins: [
-      new ExtractTextPlugin("styles.css"),
-      new webpack.ResolverPlugin(
-           new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])
-       )
-  ],
-  module: {
+},
+watch:true,
+devserver:{
+    hot:true,
+    inline:true,
+    contentBase:__dirname
+},
+plugins: [
+      new ExtractTextPlugin("styles.css")
+],
+module: {
         loaders: [
             {
                 test:   /\.css$/,

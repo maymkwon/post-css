@@ -8,7 +8,6 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
-    "bower": "^1.7.9",
     "bower-webpack-plugin": "^0.1.9",
     "css-loader": "^0.24.0",
     "extract-text-webpack-plugin": "^1.0.1",
@@ -22,7 +21,8 @@
     "webpack-dev-server": "^1.15.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-server":"webpack-dev-server"
   },
   "author": "",
   "license": "ISC"
